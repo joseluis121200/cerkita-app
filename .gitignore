@@ -41,3 +41,14 @@ example
 # generated native folders
 /ios
 /android
+
+# variables de entorno (claves de Supabase)
+.env
+
+# Supabase CLI (archivos temporales locales)
+supabase/.temp/
+supabase/.branches/
+
+# verificaciones de compilación
+.expo-verify/
+.expo-check/

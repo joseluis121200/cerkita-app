@@ -1,22 +1,40 @@
 {
   "expo": {
-    "name": "cerca-app",
+    "name": "Cerca",
     "slug": "cerca-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "cercaapp",
-    "userInterfaceStyle": "automatic",
+    "scheme": "cerca",
+    "userInterfaceStyle": "light",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "bundleIdentifier": "es.cercaapp.circulo",
+      "supportsTablet": false,
+      "icon": "./assets/images/icon.png",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSCameraUsageDescription": "Cerca usa la cámara para que hagas la postal del día y la compartas con tu círculo de seres queridos, y para leer el código QR que une el móvil de tu ser querido al círculo.",
+        "NSPhotoLibraryUsageDescription": "Cerca necesita acceder a tus fotos para que elijas la postal del día y la compartas con tu círculo de seres queridos.",
+        "NSPhotoLibraryAddUsageDescription": "Cerca puede guardar en tu galería las postales que te mandan tus seres queridos, solo si tú lo pides."
+      }
     },
     "android": {
+      "package": "es.cercaapp.circulo",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#E11D48",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_BACKGROUND_LOCATION",
+        "android.permission.READ_CONTACTS",
+        "android.permission.READ_PHONE_STATE",
+        "android.permission.SYSTEM_ALERT_WINDOW"
+      ],
       "predictiveBackGestureEnabled": false
     },
     "web": {
@@ -28,9 +46,25 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#F6F4F0",
           "image": "./assets/images/splash-icon.png",
-          "imageWidth": 76
+          "imageWidth": 180
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Cerca necesita acceder a tus fotos para que elijas la postal del día y la compartas con tu círculo de seres queridos.",
+          "cameraPermission": "Cerca usa la cámara para que hagas la postal del día y la compartas con tu círculo de seres queridos, y para leer el código QR que une el móvil de tu ser querido al círculo.",
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Cerca usa la cámara para que hagas la postal del día y la compartas con tu círculo de seres queridos, y para leer el código QR que une el móvil de tu ser querido al círculo.",
+          "microphonePermission": false,
+          "recordAudioAndroid": false
         }
       ]
     ],
